@@ -6,7 +6,7 @@ pub use crate::rendering::map_view::Layer;
 impl Layer for FeatureLayer {
     /// Renders the feature layer.
     fn render(&self) {
-        // Implement feature layer rendering logic
+        // TODO: Implement feature layer rendering logic
         for feature in &self.features {
             println!("{:?}", feature);
         }
