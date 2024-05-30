@@ -1,6 +1,6 @@
 // tests/data_tests.rs
-use my_arcgis_runtime::core::geometry::*;
-use my_arcgis_runtime::data::feature::*;
+use arcgis_rust::core::geometry::*;
+use arcgis_rust::data::feature::*;
 use geo::{point, Geometry};
 
 #[test]

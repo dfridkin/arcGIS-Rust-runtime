@@ -8,6 +8,7 @@ use core::geometry::*;
 use data::feature::*;
 use rendering::map_view::MapView;
 use tasks::geoprocessing::GeoprocessingTask;
+use geo::Point;
 
 #[tokio::main]
 async fn main() {

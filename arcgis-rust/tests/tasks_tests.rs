@@ -1,8 +1,7 @@
 // tests/tasks_tests.rs
-use my_arcgis_runtime::tasks::geoprocessing::GeoprocessingTask;
-use my_arcgis_runtime::tasks::locator::LocatorTask;
+use arcgis_rust::tasks::geoprocessing::GeoprocessingTask;
+use arcgis_rust::tasks::locator::LocatorTask;
 use geo::point;
-use tokio::runtime::Runtime;
 
 #[tokio::test]
 async fn test_geoprocessing_task_execution() {

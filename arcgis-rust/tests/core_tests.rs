@@ -1,5 +1,5 @@
 // tests/core_tests.rs
-use my_arcgis_runtime::core::geometry::*;
+use arcgis_rust::core::geometry::*;
 use geo::point;
 
 #[test]
