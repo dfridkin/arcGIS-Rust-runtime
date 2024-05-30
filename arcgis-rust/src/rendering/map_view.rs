@@ -17,7 +17,7 @@ use winit::{
 /// ```
 pub struct MapView {
     window: Window, // Window for rendering the map
-    layers: Vec<Box<dyn Layer>>, // Collection of layers to be rendered
+    pub layers: Vec<Box<dyn Layer>>, // Collection of layers to be rendered
 }
 
 impl MapView {
