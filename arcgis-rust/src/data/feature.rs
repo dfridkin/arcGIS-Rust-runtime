@@ -1,6 +1,6 @@
 // src/data/feature.rs
 use std::collections::HashMap;
-use geo::{Geometry, Point, Polygon, LineString};
+use geo::{Geometry};
 use crate::core::geometry::Envelope;
 
 #[derive(Debug, Clone)]

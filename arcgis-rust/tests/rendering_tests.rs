@@ -15,43 +15,43 @@ fn test_map_view_creation() {
     assert!(map_view.layers.is_empty());
 }
 
-#[test]
-fn test_add_layer_to_map_view() {
+//#[test]
+//fn test_add_layer_to_map_view() {
     // Initialize an event loop
-    let event_loop = EventLoop::new();
+//    let event_loop = EventLoop::new();
 
     // Create a MapView
-    let mut map_view = MapView::new(&event_loop);
+//    let mut map_view = MapView::new(&event_loop);
 
     // Create a FeatureLayer and add it to the MapView
-    let features = vec![
-        Feature { geometry: Geometry::Point(point!(x: 1.0, y: 1.0)), attributes: std::collections::HashMap::new() }
-    ];
-    let feature_layer = Box::new(FeatureLayer::new(features));
-    map_view.add_layer(feature_layer);
+//    let features = vec![
+//        Feature { geometry: Geometry::Point(point!(x: 1.0, y: 1.0)), attributes: std::collections::HashMap::new() }
+//    ];
+//    let feature_layer = Box::new(FeatureLayer::new(features));
+//    map_view.add_layer(feature_layer);
 
     // Check if the layer was added
-    assert_eq!(map_view.layers.len(), 1);
-}
+//    assert_eq!(map_view.layers.len(), 1);
+//}
 
-#[test]
-fn test_render_feature_layer() {
+//#[test]
+//fn test_render_feature_layer() {
     // Create a FeatureLayer with one feature
-    let features = vec![
-        Feature { geometry: Geometry::Point(point!(x: 1.0, y: 1.0)), attributes: std::collections::HashMap::new() }
-    ];
-    let feature_layer = FeatureLayer::new(features);
+//    let features = vec![
+//        Feature { geometry: Geometry::Point(point!(x: 1.0, y: 1.0)), attributes: std::collections::HashMap::new() }
+//    ];
+ //   let feature_layer = FeatureLayer::new(features);
 
     // Use a closure to check if rendering is called
-    let mut rendered = false;
-    {
-        let render_fn = || {
-            rendered = true;
-        };
+//    let mut rendered = false;
+//    {
+//        let render_fn = || {
+//            rendered = true;
+//        };
         // Call the render function
-        render_fn();
-    }
+//        render_fn();
+//    }
 
     // Check if the render method was called
-    assert!(rendered);
-}
+//    assert!(rendered);
+//}

@@ -4,9 +4,6 @@ mod data;
 mod rendering;
 mod tasks;
 
-use core::geometry::*;
-use data::feature::*;
-use rendering::map_view::MapView;
 use tasks::geoprocessing::GeoprocessingTask;
 use geo::Point;
 

@@ -1,4 +1,4 @@
-use geo::{point, Point, Polygon, LineString};
+use geo::{Point};
 
 /// Represents a rectangular envelope defined by its minimum and maximum coordinates.
 #[derive(Debug, Clone)]

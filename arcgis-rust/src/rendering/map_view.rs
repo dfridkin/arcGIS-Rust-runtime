@@ -1,13 +1,12 @@
 // src/rendering/map_view.rs
 use winit::{
-    event::*,
-    event_loop::{ControlFlow, EventLoop},
+    event_loop::{EventLoop},
     window::{WindowBuilder, Window},
 };
 
 pub struct MapView {
     window: Window,
-    layers: Vec<Box<dyn Layer>>,
+    pub layers: Vec<Box<dyn Layer>>,
 }
 
 impl MapView {
