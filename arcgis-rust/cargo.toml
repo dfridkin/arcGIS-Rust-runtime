@@ -1,7 +1,14 @@
 [package]
 name = "arcgis_rust"
-version = "0.1.0"
+version = "0.1.0-alpha"
 edition = "2021"
+authors = ["dfridkin <dmitriyfridkin@gmail.com>"]
+description = "A Rust-based geospatial intelligence library inspired by ArcGIS Runtime."
+license = "MIT"
+repository = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
+homepage = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
+documentation = "https://docs.rs/arcgis_rust"
+readme = "README.md"
 
 # Dependencies
 [dependencies]
