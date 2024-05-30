@@ -1,0 +1,65 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Caches and logs
+*.log
+
+# Compiled object files and libraries
+*.o
+*.obj
+*.rlib
+*.a
+
+# Generated binary files
+*.bin
+
+# Executable and output files
+*.out
+*.class
+
+# Rust specific files
+target/
+**/target/
+
+# Cargo specific files
+Cargo.lock
+
+# Package specific files
+*.crate
+
+# IDEs and editors
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Other editors
+*.sublime-project
+*.sublime-workspace
+*.sublime-gulp.cache
+*.sublime-misc
+
+# MacOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+*.swo
+
+# Project local ignore patterns
+.local/
