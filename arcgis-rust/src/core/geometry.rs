@@ -1,4 +1,7 @@
-use geo::{point, Point, Polygon, LineString};
+use geo::{point, Point, Polygon, LineString, BooleanOps};
+use geo::algorithm::buffer::Buffer;
+use geo::algorithm::union::Union;
+use geo::algorithm::intersects::Intersects;
 
 /// Represents a rectangular envelope defined by its minimum and maximum coordinates.
 ///
@@ -39,4 +42,111 @@ impl Envelope {
         point.x() >= self.min.x() && point.x() <= self.max.x() && 
         point.y() >= self.min.y() && point.y() <= self.max.y()
     }
+}
+
+/// Calculates the intersection of two polygons.
+///
+/// # Arguments
+///
+/// * `poly1` - A reference to the first `Polygon`.
+/// * `poly2` - A reference to the second `Polygon`.
+///
+/// # Returns
+///
+/// * A `Polygon` representing the intersection of the two input polygons.
+///
+/// # Examples
+///
+/// ```
+/// use geo::polygon;
+/// use my_arcgis_runtime::core::geometry::intersection;
+///
+/// let poly1 = polygon![
+///     (x: 0.0, y: 0.0),
+///     (x: 10.0, y: 0.0),
+///     (x: 10.0, y: 10.0),
+///     (x: 0.0, y: 10.0),
+///     (x: 0.0, y: 0.0),
+/// ];
+///
+/// let poly2 = polygon![
+///     (x: 5.0, y: 5.0),
+///     (x: 15.0, y: 5.0),
+///     (x: 15.0, y: 15.0),
+///     (x: 5.0, y: 15.0),
+///     (x: 5.0, y: 5.0),
+/// ];
+///
+/// let intersection_poly = intersection(&poly1, &poly2);
+/// ```
+pub fn intersection(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> {
+    poly1.intersection(poly2)
+}
+
+/// Merges two polygons into a single polygon (union).
+///
+/// # Arguments
+///
+/// * `poly1` - A reference to the first `Polygon`.
+/// * `poly2` - A reference to the second `Polygon`.
+///
+/// # Returns
+///
+/// * A `Polygon` representing the union of the two input polygons.
+///
+/// # Examples
+///
+/// ```
+/// use geo::polygon;
+/// use my_arcgis_runtime::core::geometry::union;
+///
+/// let poly1 = polygon![
+///     (x: 0.0, y: 0.0),
+///     (x: 10.0, y: 0.0),
+///     (x: 10.0, y: 10.0),
+///     (x: 0.0, y: 10.0),
+///     (x: 0.0, y: 0.0),
+/// ];
+///
+/// let poly2 = polygon![
+///     (x: 5.0, y: 5.0),
+///     (x: 15.0, y: 5.0),
+///     (x: 15.0, y: 15.0),
+///     (x: 5.0, y: 15.0),
+///     (x: 5.0, y: 5.0),
+/// ];
+///
+/// let union_poly = union(&poly1, &poly2);
+/// ```
+pub fn union(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> {
+    poly1.union(poly2)
+}
+
+/// Creates a buffer zone around a line.
+///
+/// # Arguments
+///
+/// * `line` - A reference to the `LineString` around which to create the buffer.
+/// * `distance` - The buffer distance.
+///
+/// # Returns
+///
+/// * A `Polygon` representing the buffer zone around the input line.
+///
+/// # Examples
+///
+/// ```
+/// use geo::LineString;
+/// use my_arcgis_runtime::core::geometry::buffer;
+///
+/// let line = LineString::from(vec![
+///     (0.0, 0.0),
+///     (10.0, 0.0),
+/// ]);
+///
+/// let buffer_distance = 1.0;
+/// let buffer_poly = buffer(&line, buffer_distance);
+/// ```
+pub fn buffer(line: &LineString<f64>, distance: f64) -> Polygon<f64> {
+    line.buffer(distance)
 }
