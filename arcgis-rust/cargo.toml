@@ -17,10 +17,17 @@ geo-booleanop = "0.3.2"
 geojson = "0.23"
 winit = "0.26"
 wgpu = "0.12"
-reqwest = { version = "0.11", features = ["json"] }
+reqwest = { version = "0.11", features = ["json","blocking"] }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [dev-dependencies]
 assert_approx_eq = "1.1"
+
+[features]
+custom_test_frameworks = []
+
+[[bin]]
+name = "map_view_test"
+path = "bin_tests/map_view_test.rs"
