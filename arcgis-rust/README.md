@@ -54,7 +54,7 @@ serde_json = "1.0"
 
 Creating and Using Geospatial Types
 ```rust
-use my_arcgis_runtime::core::geometry::*;
+use arcgis_rust::core::geometry::*;
 use geo::point;
 
 fn main() {
@@ -75,7 +75,7 @@ fn main() {
 ```
 Executing a Geoprocessing Task
 ```rust
-use my_arcgis_runtime::tasks::geoprocessing::GeoprocessingTask;
+use arcgis_rust::tasks::geoprocessing::GeoprocessingTask;
 use tokio;
 
 #[tokio::main]
