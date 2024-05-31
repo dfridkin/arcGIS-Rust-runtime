@@ -13,6 +13,7 @@ readme = "README.md"
 # Dependencies
 [dependencies]
 geo = "0.22"
+geo-booleanop = "0.3.2"
 geojson = "0.23"
 winit = "0.26"
 wgpu = "0.12"

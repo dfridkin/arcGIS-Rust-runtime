@@ -1,7 +1,7 @@
-use geo::{point, Point, Polygon, LineString, BooleanOps};
-use geo::algorithm::buffer::Buffer;
-use geo::algorithm::union::Union;
-use geo::algorithm::intersects::Intersects;
+use geo::{point, Point, Polygon, LineString, MultiPolygon};
+use geo::BooleanOps;
+use geo::algorithm::bounding_rect::BoundingRect;
+use geo::algorithm::coords_iter::CoordsIter;
 
 /// Represents a rectangular envelope defined by its minimum and maximum coordinates.
 ///
@@ -20,6 +20,7 @@ use geo::algorithm::intersects::Intersects;
 /// assert!(envelope.contains(&point_inside));
 /// assert!(!envelope.contains(&point_outside));
 /// ```
+
 #[derive(Debug, Clone)]
 pub struct Envelope {
     /// Minimum coordinates of the envelope.
@@ -79,7 +80,8 @@ impl Envelope {
 ///
 /// let intersection_poly = intersection(&poly1, &poly2);
 /// ```
-pub fn intersection(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> {
+
+pub fn intersection(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> MultiPolygon<f64> {
     poly1.intersection(poly2)
 }
 
@@ -118,11 +120,12 @@ pub fn intersection(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> 
 ///
 /// let union_poly = union(&poly1, &poly2);
 /// ```
-pub fn union(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> {
+
+pub fn union(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> MultiPolygon<f64> {
     poly1.union(poly2)
 }
 
-/// Creates a buffer zone around a line.
+/// Creates a bounding box as a simple buffer zone around a line.
 ///
 /// # Arguments
 ///
@@ -147,6 +150,23 @@ pub fn union(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> Polygon<f64> {
 /// let buffer_distance = 1.0;
 /// let buffer_poly = buffer(&line, buffer_distance);
 /// ```
+
 pub fn buffer(line: &LineString<f64>, distance: f64) -> Polygon<f64> {
-    line.buffer(distance)
+    let bounding_rect = line.bounding_rect().unwrap();
+    let min_x = bounding_rect.min().x - distance;
+    let max_x = bounding_rect.max().x + distance;
+    let min_y = bounding_rect.min().y - distance;
+    let max_y = bounding_rect.max().y + distance;
+
+    Polygon::new(
+        vec![
+            (min_x, min_y),
+            (max_x, min_y),
+            (max_x, max_y),
+            (min_x, max_y),
+            (min_x, min_y),
+        ]
+        .into(),
+        vec![],
+    )
 }
