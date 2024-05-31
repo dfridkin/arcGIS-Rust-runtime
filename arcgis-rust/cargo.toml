@@ -9,6 +9,7 @@ repository = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
 homepage = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
 documentation = "https://docs.rs/arcgis_rust"
 readme = "README.md"
+exclude = ["bin_tests/**"]
 
 # Dependencies
 [dependencies]

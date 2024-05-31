@@ -1,9 +1,9 @@
 // tests/rendering_tests.rs
-use arcgis_rust::rendering::map_view::{MapView, Layer};
-use arcgis_rust::rendering::feature_layer::FeatureLayer;
-use arcgis_rust::data::feature::{Feature, FeatureLayer as DataFeatureLayer};
-use geo::{point, Geometry};
-use winit::event_loop::EventLoop;
+//use arcgis_rust::rendering::map_view::{MapView, Layer};
+//use arcgis_rust::rendering::feature_layer::FeatureLayer;
+//use arcgis_rust::data::feature::{Feature, FeatureLayer as DataFeatureLayer};
+//use geo::{point, Geometry};
+//use winit::event_loop::EventLoop;
 
 
 //#[test]
