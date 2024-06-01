@@ -1,6 +1,6 @@
 [package]
 name = "arcgis_rust"
-version = "0.1.1-alpha"
+version = "0.1.2-alpha"
 edition = "2021"
 authors = ["dfridkin <dmitriyfridkin@gmail.com>"]
 description = "A Rust-based geospatial intelligence library inspired by ArcGIS Runtime."
@@ -9,17 +9,28 @@ repository = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
 homepage = "https://github.com/dfridkin/arcGIS-Rust-runtime/"
 documentation = "https://docs.rs/arcgis_rust"
 readme = "README.md"
+exclude = ["bin_tests/**"]
 
 # Dependencies
 [dependencies]
 geo = "0.22"
+geo-booleanop = "0.3.2"
 geojson = "0.23"
 winit = "0.26"
 wgpu = "0.12"
-reqwest = { version = "0.11", features = ["json"] }
+reqwest = { version = "0.11", features = ["json","blocking"] }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
 [dev-dependencies]
 assert_approx_eq = "1.1"
+
+[features]
+custom_test_frameworks = []
+default = []
+map_view_test_bin = []
+
+[[bin]]
+name = "map_view_test"
+path = "bin_tests/map_view_test.rs"

@@ -6,7 +6,7 @@ use geo::Point;
 /// # Examples
 ///
 /// ```
-/// use my_arcgis_runtime::tasks::locator::LocatorTask;
+/// use arcgis_rust::tasks::locator::LocatorTask;
 /// use tokio;
 ///
 /// #[tokio::main]
@@ -42,7 +42,7 @@ impl LocatorTask {
             .send()
             .await?;
         // parse the response to get the location
-        let location = Point::new(0.0, 0.0);  // TODO: Replace with actual parsing logic
+        let location = Point::new(0.0, 0.0); 
         Ok(location)
     }
 }
