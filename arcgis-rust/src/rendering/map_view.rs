@@ -1,6 +1,5 @@
 use winit::{
-    event::*,
-    event_loop::{ControlFlow, EventLoop},
+    event_loop::{EventLoop},
     window::{WindowBuilder, Window},
 };
 

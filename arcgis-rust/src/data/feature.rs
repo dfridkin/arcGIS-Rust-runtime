@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use geo::{Geometry, Point};
+use geo::{Geometry};
 use crate::core::geometry::Envelope;
 
 /// Represents a geographic feature with geometry and attributes.

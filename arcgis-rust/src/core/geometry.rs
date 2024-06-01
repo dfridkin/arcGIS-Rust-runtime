@@ -1,7 +1,6 @@
-use geo::{point, Point, Polygon, LineString, MultiPolygon};
+use geo::{Point, Polygon, LineString, MultiPolygon};
 use geo::BooleanOps;
 use geo::algorithm::bounding_rect::BoundingRect;
-use geo::algorithm::coords_iter::CoordsIter;
 
 /// Represents a rectangular envelope defined by its minimum and maximum coordinates.
 ///
