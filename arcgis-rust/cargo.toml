@@ -28,6 +28,8 @@ assert_approx_eq = "1.1"
 
 [features]
 custom_test_frameworks = []
+default = []
+map_view_test_bin = []
 
 [[bin]]
 name = "map_view_test"

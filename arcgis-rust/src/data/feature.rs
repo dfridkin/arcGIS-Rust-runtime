@@ -31,8 +31,9 @@ impl FeatureLayer {
     /// # Examples
     ///
     /// ```
-    /// use my_arcgis_runtime::data::feature::{Feature, FeatureLayer};
-    /// use my_arcgis_runtime::core::geometry::{Envelope, point};
+    /// use arcgis_rust::data::feature::{Feature, FeatureLayer};
+    /// use arcgis_rust::core::geometry::{Envelope};
+    /// use geo::point;
     /// use geo::Geometry;
     /// use std::collections::HashMap;
     ///

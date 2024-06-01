@@ -9,7 +9,7 @@ use winit::{
 /// # Examples
 ///
 /// ```
-/// use my_arcgis_runtime::rendering::map_view::MapView;
+/// use arcgis_rust::rendering::map_view::MapView;
 /// use winit::event_loop::EventLoop;
 ///
 /// let event_loop = EventLoop::new();

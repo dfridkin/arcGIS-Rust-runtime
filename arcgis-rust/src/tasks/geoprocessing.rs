@@ -6,7 +6,7 @@ use reqwest::Error;
 /// # Examples
 ///
 /// ```
-/// use my_arcgis_runtime::tasks::geoprocessing::GeoprocessingTask;
+/// use arcgis_rust::tasks::geoprocessing::GeoprocessingTask;
 /// use tokio;
 ///
 /// #[tokio::main]

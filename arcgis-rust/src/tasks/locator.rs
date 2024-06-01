@@ -6,7 +6,7 @@ use geo::Point;
 /// # Examples
 ///
 /// ```
-/// use my_arcgis_runtime::tasks::locator::LocatorTask;
+/// use arcgis_rust::tasks::locator::LocatorTask;
 /// use tokio;
 ///
 /// #[tokio::main]

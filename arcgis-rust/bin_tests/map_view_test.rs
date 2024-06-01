@@ -24,16 +24,6 @@ fn run_map_view_creation_test() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_map_view_creation() {
-        run_map_view_creation_test().unwrap();
-    }
-}
-
 fn main() {
     if let Err(e) = run_map_view_creation_test() {
         eprintln!("Test failed: {:?}", e);

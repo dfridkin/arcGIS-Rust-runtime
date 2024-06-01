@@ -8,7 +8,8 @@ use geo::algorithm::coords_iter::CoordsIter;
 /// # Examples
 ///
 /// ```
-/// use my_arcgis_runtime::core::geometry::{Envelope, point};
+/// use arcgis_rust::core::geometry::{Envelope};
+/// use geo::point;
 ///
 /// let envelope = Envelope {
 ///     min: point!(x: 0.0, y: 0.0),
@@ -60,7 +61,7 @@ impl Envelope {
 ///
 /// ```
 /// use geo::polygon;
-/// use my_arcgis_runtime::core::geometry::intersection;
+/// use arcgis_rust::core::geometry::intersection;
 ///
 /// let poly1 = polygon![
 ///     (x: 0.0, y: 0.0),
@@ -100,7 +101,7 @@ pub fn intersection(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> MultiPolygon<
 ///
 /// ```
 /// use geo::polygon;
-/// use my_arcgis_runtime::core::geometry::union;
+/// use arcgis_rust::core::geometry::union;
 ///
 /// let poly1 = polygon![
 ///     (x: 0.0, y: 0.0),
@@ -140,7 +141,7 @@ pub fn union(poly1: &Polygon<f64>, poly2: &Polygon<f64>) -> MultiPolygon<f64> {
 ///
 /// ```
 /// use geo::LineString;
-/// use my_arcgis_runtime::core::geometry::buffer;
+/// use arcgis_rust::core::geometry::buffer;
 ///
 /// let line = LineString::from(vec![
 ///     (0.0, 0.0),
