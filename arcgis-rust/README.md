@@ -120,8 +120,83 @@ pub struct Envelope {
     pub fn contains(&self, point: &Point<f64>) -> bool;
 }
 ```
+`Intersection`
+
+Calculate the intersection of two geometries.
+
+
+```rust
+
+use arcgis_rust::core::geometry::{Polygon, run_intersection};
+
+let poly1 = polygon![
+    (x: 0.0, y: 0.0),
+    (x: 10.0, y: 0.0),
+    (x: 10.0, y: 10.0),
+    (x: 0.0, y: 10.0),
+    (x: 0.0, y: 0.0)
+];
+let poly2 = polygon![
+    (x: 5.0, y: 5.0),
+    (x: 15.0, y: 5.0),
+    (x: 15.0, y: 15.0),
+    (x: 5.0, y: 15.0),
+    (x: 5.0, y: 5.0)
+];
+let intersection = run_intersection(&poly1, &poly2);
+
+println!("Intersection: {:?}", intersection);
+```
+
+`Union`
+
+Merge multiple geometries into a single geometry.
+
+```rust
+
+use arcgis_rust::core::geometry::{Polygon, run_union};
+
+let poly1 = polygon![
+    (x: 0.0, y: 0.0),
+    (x: 10.0, y: 0.0),
+    (x: 10.0, y: 10.0),
+    (x: 0.0, y: 10.0),
+    (x: 0.0, y: 0.0)
+];
+let poly2 = polygon![
+    (x: 5.0, y: 5.0),
+    (x: 15.0, y: 5.0),
+    (x: 15.0, y: 15.0),
+    (x: 5.0, y: 15.0),
+    (x: 5.0, y: 5.0)
+];
+let union = run_union(&poly1, &poly2);
+
+println!("Union: {:?}", union);
+```
+
+`Boundaries`
+
+Retrieve the boundary of a geometry.
+
+```rust
+
+use arcgis_rust::core::geometry::{Polygon, calculate_boundaries};
+
+let poly = polygon![
+    (x: 0.0, y: 0.0),
+    (x: 10.0, y: 0.0),
+    (x: 10.0, y: 10.0),
+    (x: 0.0, y: 10.0),
+    (x: 0.0, y: 0.0)
+];
+let boundaries = calculate_boundaries(&poly);
+
+println!("Boundaries: {:?}", boundaries);
+```
 
 ## Data Module
+
 `Feature`
 
 Represents a geographic feature with geometry and attributes.
@@ -147,6 +222,7 @@ pub struct FeatureLayer {
 }
 ```
 ## Rendering Module
+
 `MapView`
 
 Manages the rendering of a map view.
@@ -170,6 +246,7 @@ pub trait Layer {
 }
 ```
 ## Tasks Module
+
 `GeoprocessingTask`
 
 Executes geoprocessing tasks.
@@ -209,5 +286,4 @@ We welcome contributions to make this project even more awesome! To contribute, 
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-
-    Happy coding, and may your Rust adventures be filled with joy and discovery! 🦀❤️
+Happy coding, and may your Rust adventures be filled with joy and discovery! 🦀❤️
