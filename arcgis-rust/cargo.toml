@@ -1,6 +1,6 @@
 [package]
 name = "arcgis_rust"
-version = "0.1.2-alpha"
+version = "0.1.2"
 edition = "2021"
 authors = ["dfridkin <dmitriyfridkin@gmail.com>"]
 description = "A Rust-based geospatial intelligence library inspired by ArcGIS Runtime."
