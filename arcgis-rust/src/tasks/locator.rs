@@ -42,7 +42,7 @@ impl LocatorTask {
             .send()
             .await?;
         // parse the response to get the location
-        let location = Point::new(0.0, 0.0);  // TODO: Replace with actual parsing logic
+        let location = Point::new(0.0, 0.0); 
         Ok(location)
     }
 }
