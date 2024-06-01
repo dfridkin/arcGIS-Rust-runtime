@@ -22,6 +22,7 @@ reqwest = { version = "0.11", features = ["json","blocking"] }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+wasm-bindgen = "0.2.92"
 
 [dev-dependencies]
 assert_approx_eq = "1.1"
@@ -30,3 +31,6 @@ assert_approx_eq = "1.1"
 custom_test_frameworks = []
 default = []
 map_view_test_bin = []
+
+[lib]
+crate-type = ["cdylib", "rlib"]
